@@ -4,11 +4,10 @@ import * as bootstrap from "bootstrap";
 flsFunctions.isWebp();
 import { plugins } from "./modules/plugins.js";
 import "latest-createjs/lib/preloadjs/preloadjs.js";
-// import imagesLoaded from "imagesloaded";
 
 plugins();
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, SplitText, CSSRulePlugin);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, CSSRulePlugin);
 
 (function scroller() {
   SmoothScroll({
@@ -22,7 +21,6 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, SplitText, CSSRulePlugin);
 window.createjs = createjs;
 
 import { cursor } from "./components/cursor.js";
-import { titleAnim, textAnim } from "./components/textAnim.js";
 import { blockAnimation } from "./components/blocksAnimation.js";
 import { popup } from "./components/popup.js";
 import { gallery } from "./sections/gallery.js";
@@ -41,8 +39,7 @@ import { loading } from "./components/loading.js";
 cursor();
 document.addEventListener("DOMContentLoaded", function () {
 
-  textAnim();
-  titleAnim();
+
   blockAnimation();
   Splitting();
 

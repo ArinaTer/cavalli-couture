@@ -80,7 +80,6 @@ export function brochure() {
         .to(".brochure__right", {
             opacity: 1
         }, "<+=10%")
-        .add(titleAnim, "<")
     })
 
     mm.add("(max-width: 769px)", () => { 
@@ -126,74 +125,6 @@ export function brochure() {
         }, "<+=10%")
     })
 
-    function titleAnim() {
 
-        SMinit();
-      
-        function SMinit() {
-          gsap.utils.toArray(".split-title-brochure").forEach(SMcreateTrigger);
-        }
-        
-        function SMcreateTrigger(el) {
-          let SMtext = gsap.utils.toArray(".split-title-box-brochure", el);
-        
-          let lines = new SplitText(SMtext, { type: "lines", linesClass: "line" });
-          let wrapLines = new SplitText(SMtext, {
-            type: "lines",
-            linesClass: "line-wrapper",
-          });
-          let initted, finished;
-        
-          SMsetup();
-        
-          function SMsetup() {
-        
-            lines.lines.forEach((line, i) => {
-      
-              let xPercent = i % 2 === 0 ? 10 : -10;
-              gsap.set(line, { xPercent: xPercent });
-      
-              let chars = new SplitText(line, { type: "chars", charsClass: "char" });
-        
-      
-              chars.chars.forEach((char, j) => {
-                let delay = j * 0.06;
-                let xOffset = i % 2 === 0 ? 50 : -50;
-                gsap.fromTo(
-                  char,
-                  { xPercent: xOffset, opacity: 0, },
-                  {
-                    xPercent: 0,
-                    opacity: 1,
-                    duration: 3,
-                    ease: "back.out(0.5)",
-                    delay: delay,
-                    scrollTrigger: {
-                      trigger: line,
-                      start: "top bottom",
-                      // markers: true,
-                    },
-                  }
-                );
-              });
-        
-              gsap.to(line, {
-                xPercent: 0,
-                stagger: 0.1,
-                opacity: 1,
-                duration: 3,
-                ease: "back.out(0.5)",
-      
-                scrollTrigger: {
-                  trigger: line,
-                  start: "top bottom",
-                  // markers: true,
-                },
-              });
-      
-            });
-          }
-        }
-    }
 
 }
