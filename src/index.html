@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	@@include('html/head.html',{ "title":"" })
+
+	<body class="">
+		@@include('html/components/loading.html')
+		@@include('html/sections/header.html')
+		<main class="main">
+			@@include('html/sections/intro.html')
+			@@include('html/sections/about.html')
+			@@include('html/sections/amenities.html')
+			@@include('html/sections/brochure.html')
+			@@include('html/sections/car.html')
+			<!-- @@include('html/sections/location.html') -->
+			@@include('html/sections/gallery.html')
+			@@include('html/sections/floorplans.html')
+			@@include('html/sections/payment.html')
+			@@include('html/sections/developer.html')
+		</main>
+		@@include('html/sections/footer.html')
+		@@include('html/components/cursor.html')
+		
+		@@include('html/components/popupTime.html')
+		@@include('html/components/popupMain.html')
+	</body>
+	<script src="js/app.min.js"></script>
+	<script src="https://form.sales-inquiries.ae/static/form-dist.js"></script>
+    <script src="https://form.sales-inquiries.ae/static/events-ajax-dist.js"></script>
+</html>

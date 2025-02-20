@@ -1,0 +1,296 @@
+.amenities {
+    position: relative;
+    height: calc(var(--vh) * 4);
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+
+    .goto__amenities {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+    }
+
+    &__container {
+        position: sticky;
+        top: 0;
+        height: var(--vh);
+        display: flex;
+        justify-content: space-around;
+        width: 90%;
+        padding-top: 80px;
+    }
+
+    &__title {
+        overflow: hidden;
+    }
+
+    &__header {
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 300;
+        font-size: 9.2vh;
+        margin-bottom: 5vh;
+    }
+
+    &__desc {
+        font-size: 3vh;
+        width: 90%;
+        margin-bottom: 4.5vh;
+    }
+
+    &__btn {
+        &_container {
+            width: 90%;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &__italic {
+        font-weight: 400;
+        // font-style: italic;
+        @include philosopherBoldItalic;
+    }
+
+    &__left {
+        width: 50%;
+    }
+
+    &__right {
+        width: 50%;
+    }
+
+    &__area {
+        background-color: #e9e4d9;
+        border-radius: 15px;
+        padding: 6vh 7% 6.5vh 7%;
+
+        &_header {
+            font-size: 8.1vh;
+            font-weight: 300;
+            margin: 30px 0;
+            color: #000;
+        }
+
+        &_desc {
+            color: #000;
+            font-size: 1.5vw;
+        }
+    }
+
+    &__pool {
+        background-image: url(../img/aboutPoolBg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 6vh 7% 6.5vh 7%;
+        border-radius: 15px;
+        margin-top: 6.1vh;
+
+        &_header {
+            color: #fff;
+            font-size: 8.1vh;
+            font-weight: 300;
+            padding: 30px 0;
+        }
+
+        &_desc {
+            font-size: 1.5vw;
+        }
+    }
+
+    &__mob {
+        margin-top: 6.1vh;
+        display: block;
+        padding: 6vh 7% 6.5vh 7%;
+        border-radius: 15px;
+        img {
+            width: 87px;
+            height: 80px;
+        }
+
+        &_header {
+            font-size: 8.1vh;
+            padding: 3.8vh 0;
+        }
+
+        &_desc {
+            font-size: 1.5vw;
+        }
+    }
+
+    &__kids {
+        background-image: url(../img/aboutKidsBg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &_header {
+            color: #fff;
+        }
+    }
+
+    &__gym {
+        background-color: #e9e4d9;
+
+        &_header {
+            color: #000;
+        }
+
+        &_desc {
+            color: #000;
+        }
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .amenities {
+        &__area {
+            padding: 4vh 7% 4.3vh 7%;
+        }
+
+        &__pool {
+            padding: 4vh 7% 4.3vh 7%;
+        }
+
+        &__mob {
+            padding: 4vh 7% 4.3vh 7%;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .amenities {
+        &__header {
+            font-size: 60px;
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .amenities {
+        &__area {
+            &_header {
+                font-size: 54px;
+            }
+        }
+
+        &__pool {
+            &_header {
+                font-size: 54px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 835px) {
+    .amenities {
+        &__header {
+            font-size: 52px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .amenities {
+        height: auto;
+        margin-top: 8vh;
+        &__header {
+            font-size: 42px;
+            margin-bottom: 32px;
+        }
+
+        &__br {
+            display: none;
+        }
+
+        &__desc {
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 32px;
+        }
+
+        &__left {
+            width: 100%;
+        }
+
+        &__right {
+            width: 100%;
+        }
+
+        &__container {
+            // top: 60vh;
+            height: auto;
+            position: relative;
+            flex-direction: column;
+        }
+
+        &__btn {
+            &_container {
+                justify-content: center;
+                margin: 0 auto 70px;
+            }
+        }
+
+        &__area {
+            padding: 30px 7% 30px 7%;
+            &_header {
+                font-size: 24px;
+                margin: 15px 0;
+            }
+
+            &_desc {
+                font-size: 16px;
+            }
+
+            &_img {
+                width: 42px;
+                height: 38px;
+            }
+        }
+
+        &__pool {
+            padding: 30px 7% 30px 7%;
+            margin-top: 20px;
+            &_header {
+                font-size: 24px;
+                margin: 15px 0;
+                padding: 0;
+            }
+
+            &_desc {
+                font-size: 16px;
+            }
+
+            &_img {
+                width: 39px;
+                height: 38px;
+            }
+        }
+
+        &__mob {
+            margin-top: 20px;
+            display: block;
+            padding: 30px 7% 30px 7%;
+            border-radius: 15px;
+            &_header {
+                font-size: 24px;
+                margin: 15px 0;
+                padding: 0;
+                font-weight: 300;
+            }
+
+            &_desc {
+                font-size: 16px;
+            }
+
+            &_img {
+                width: 39px;
+                height: 38px;
+            }
+        }
+    }
+}

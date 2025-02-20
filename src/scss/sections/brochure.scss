@@ -1,0 +1,349 @@
+.brochure {
+  position: relative;
+  background-color: #e9e4d9;
+  height: calc(var(--vh) * 3);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__line {
+    display: inline-block;
+  }
+
+  &__sticky {
+    position: sticky;
+    top: 0;
+    height: var(--vh);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &__container {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    height: var(--vh);
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // gap: 95px;
+    z-index: 11;
+    padding-top: 80px;
+    overflow: hidden;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 101%;
+    height: 101vh;
+    background-color: #000;
+    clip-path: circle(100% at 50% 50%);
+    z-index: 10;
+  }
+
+  &__left {
+    position: relative;
+    width: 50%;
+    transform: translateX(50%);
+    &_img {
+      width: 100%;
+    }
+
+    &_back {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      transform: translate(0%, -50%);
+      width: 100%;
+    }
+
+    &_text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      color: #000;
+      @include philosopherItalic;
+      text-transform: uppercase;
+      font-size: 4.5vw;
+      text-align: center;
+    }
+  }
+
+  &__right {
+    opacity: 0;
+  }
+
+  &__header {
+    text-transform: uppercase;
+    font-size: 6vw;
+    font-weight: 300;
+    margin-bottom: 6.5vh;
+    color: #000;
+  }
+
+  &__italic {
+    // font-style: italic;
+    font-weight: 300;
+    @include philosopherBoldItalic;
+  }
+
+  &__btn {
+    &_container {
+      width: 95%;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 4vh;
+    }
+  }
+
+  &__input {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+    width: 100%;
+    color: #000;
+    position: relative;
+    height: 70px;
+    padding: 0;
+    border-radius: 0;
+    @include sm {
+      height: 56px;
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: #000 !important;
+      font-size: 0.8vw;
+      @include xxl {
+        font-size: 16px;
+      }
+    }
+
+    &_container {
+      // width: 90%;
+      .iti {
+        .iti__selected-flag {
+          background-color: transparent;
+        }
+      }
+      .iti {
+        height: 100%;
+        // @include xxl {
+        //   padding: 20px 0;
+        // }
+        input {
+          padding-left: 115px !important;
+          @include sm {
+            padding-left: 100px !important;
+          }
+          &:focus {
+            &::placeholder {
+              opacity: 0;
+            }
+          }
+          &::placeholder {
+            font-size: 0.8vw;
+            opacity: 1;
+            color: #000;
+            @include xxl {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    &_tel {
+      &::placeholder {
+        color: #000;
+      }
+      &:focus {
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+      &::placeholder {
+        opacity: 1;
+      }
+    }
+
+    &-phone {
+      margin-bottom: 2vw;
+      @include xxl {
+        margin-bottom: 40px;
+      }
+      input {
+        padding-bottom: 1vw;
+        position: initial;
+        bottom: initial !important;
+        height: 100%;
+        border-radius: 0;
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      color: #000;
+      font-size: 0.8vw;
+      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-origin: left top;
+      transform: scale(1) translate(0, -50%);
+      svg {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      @include xxl {
+        font-size: 16px;
+      }
+    }
+
+    input {
+      background-color: transparent;
+      border: none;
+      color: #000;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      padding: 0;
+      &::placeholder {
+        opacity: 0;
+      }
+      
+      &:-webkit-autofill ~ label,
+      &:focus + label,
+      &:focus ~ label,
+      &:not(:placeholder-shown) ~ label {
+        transition-duration: 0.2s;
+        transform: scale(0.7) translate(-1.5rem, -2rem);
+        opacity: 0.5;
+        svg {
+          opacity: 0;
+          transform: scale(0);
+        }
+        @include md {
+          transform: scale(0.7) translate(-1.6rem, -2rem);
+        }
+        @include sm {
+          transform: scale(0.7) translate(-2.1em, -2rem);
+        }
+      }
+
+      &:valid + label {
+        transition-duration: 0.2s;
+        transform: scale(0.7) translate(-1.5rem, -2rem);
+        opacity: 0.5;
+        svg {
+          opacity: 0;
+          transform: scale(0);
+        }
+        @include md {
+          transform: scale(0.7) translate(-1.6rem, -2rem);
+        }
+        @include sm {
+          transform: scale(0.7) translate(-2.1em, -2rem);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .brochure {
+    height: calc(var(--vh) * 2);
+    &__container {
+      height: var(--vh);
+      width: 80%;
+      flex-direction: column;
+      padding-top: 50px;
+    }
+
+    &__left {
+      display: flex;
+      justify-content: center;
+      height: 50%;
+      // margin-top: 10vh;
+      width: 100%;
+      // transform: translate(-50%, -50%);
+      will-change: transform;
+
+      &_back {
+        top: 0;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &_img {
+        width: 90%;
+        height: 100%;
+        // top: 50%;
+        // transform: translateY(-50%);
+      }
+
+      &_text {
+        top: 50%;
+        // transform: translate(-50%, -50%);
+      }
+    }
+
+    &__right {
+      width: 100%;
+    }
+
+    &__gradient {
+      display: none;
+    }
+
+    &__header {
+      font-size: 4.2vh;
+      margin-top: 6vh;
+      margin-bottom: 2vh;
+    }
+
+    &__input {
+      font-size: 16px;
+
+      &::placeholder {
+        color: #1c1c1c;
+        font-size: 20px;
+      }
+    }
+
+    &__btn {
+      gap: 11px;
+      font-size: 20px;
+      &_icn {
+        width: 42px;
+        height: 42px;
+      }
+      &_circle {
+        width: 32px;
+        height: 32px;
+      }
+
+      svg {
+        width: 18px;
+        height: 15px;
+      }
+      &_container {
+        justify-content: center;
+        margin-bottom: 5vh;
+      }
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  .brochure__container {
+    padding-top: 0;
+  }
+}

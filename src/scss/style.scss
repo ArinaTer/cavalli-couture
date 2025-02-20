@@ -1,0 +1,74 @@
+// @import '../files/fonts/fonts.css';
+@import "var";
+@import "mixin";
+@import "fonts";
+@import "imports";
+@import "settings";
+@import "config";
+
+:root {
+	--primary: #ada08c;
+	--bg-color: #e9e4d9;
+	--title-color: #919191;
+	--primary-text: #221f20;
+	--secondary-text: #919191;
+	--active-element: rgb(64, 64, 64, 0.05);
+	--inactive-text: #d9d9d9;
+	--color-brick: #b1694a;
+	--color-white: #fff;
+	--color-black: #000;
+	--color-blue: #28add6;
+	--vh: 100svh;
+}
+
+html {
+	background-color: #000;
+}
+
+body {
+	width: 100vw;
+	// overflow: auto;
+	// overflow-x: hidden;
+	background-color: #000;
+	position: relative;
+	@include mulishRegular;
+
+	&::-webkit-scrollbar {
+		-webkit-appearance: none;
+		width: 0px;
+		display: none;
+	}
+	overflow: hidden;
+}
+
+.goto {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 10vh;
+}
+
+@import "./components/loading";
+@import "./sections/header";
+@import "./sections/intro";
+@import "./sections/about";
+@import "./sections/amenities";
+@import "sections/brochure";
+@import "./sections/car";
+
+@import "./sections/loader";
+@import "./sections/header";
+@import "./sections/intro";
+@import "sections/location";
+@import "sections/gallery";
+@import "sections/floorplans";
+@import "sections/payment";
+@import "sections/developer";
+
+// @import './sections/requestForm';
+@import "sections/footer";
+@import "components/cursor";
+@import "components/popup";
+@import "components/popupTime";
+@import "components/popupMain";

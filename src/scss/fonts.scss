@@ -1,0 +1,51 @@
+// Mulish
+@include font-face("mulishRegular", "../files/fonts/Mulish/Mulish-Regular");
+@include font-face("mulishLight", "../files/fonts/Mulish/Mulish-Light");
+@include font-face("mulishExtraBoldItalic", "../files/fonts/Mulish/Mulish-ExtraBoldItalic");
+@include font-face("mulishMedium", "../files/fonts/Mulish/Mulish-Medium");
+@include font-face("mulishMediumItalic", "../files/fonts/Mulish/Mulish-MediumItalic");
+
+// Philosopher
+@include font-face("philosopherBoldItalic", "../files/fonts/Philosopher/Philosopher-BoldItalic");
+@include font-face("philosopherItalic", "../files/fonts/Philosopher/Philosopher-Italic");
+@include font-face("philosopherBold", "../files/fonts/Philosopher/Philosopher-Bold");
+@include font-face("philosopherRegular", "../files/fonts/Philosopher/Philosopher-Regular");
+
+// 
+@mixin mulishRegular {
+	font-family: "mulishRegular", Arial, sans-serif;
+}
+
+@mixin mulishLight {
+	font-family: "mulishLight", Arial, sans-serif;
+}
+
+@mixin mulishExtraBoldItalic {
+	font-family: "mulishExtraBoldItalic", Arial, sans-serif;
+}
+
+@mixin mulishMedium {
+	font-family: "mulishMedium", Arial, sans-serif;
+}
+
+@mixin mulishMediumItalic {
+	font-family: "mulishMediumItalic", Arial, sans-serif;
+}
+
+
+// 
+@mixin philosopherBoldItalic {
+	font-family: "philosopherBoldItalic", Arial, sans-serif;
+}
+
+@mixin philosopherItalic {
+	font-family: "philosopherItalic", Arial, sans-serif;
+}
+
+@mixin philosopherBold {
+	font-family: "philosopherBold", Arial, sans-serif;
+}
+
+@mixin philosopherRegular {
+	font-family: "philosopherRegular", Arial, sans-serif;
+}

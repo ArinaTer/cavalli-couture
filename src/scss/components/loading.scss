@@ -1,0 +1,103 @@
+.loading {
+    height: var(--vh);
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: #000;
+
+    &__container {
+        height: var(--vh);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+    }
+
+    &__text {
+        font-size: 14.1vw;
+        font-weight: 400;
+        overflow: hidden;
+
+        span {
+            display: inline-block;
+            .char.top:before {
+                transform: translateY(-100%);
+            }
+            .char.anim-italic.top {
+                transform: translateY(-100%);
+            }
+        }
+
+        &_normal {
+            .char {
+                // overflow: hidden;
+                color: transparent;
+
+                &:before
+                // &:after
+                {
+                    visibility: visible;
+                    color: #fff;
+                    transition: transform 0.5s cubic-bezier(0.9, 0, 0.2, 1);
+                    transition-delay: calc(0.2s + (0.1s * (var(--char-index))));
+                }
+
+                &:before {
+                    // color: #00C9B1;
+                    transition-delay: calc(0.02s * (var(--char-index)));
+                }
+            }
+
+            .char:before {
+                transition-delay: calc(0.35s + (0.1s * (var(--char-index))));
+            }
+            &.char:after {
+                transition-delay: calc(0.02s * (var(--char-index)));
+            }
+            .char:before {
+                transform: translateY(100%);
+            }
+            .char.anim:before {
+                transform: translateY(0%);
+            }
+            // .char:before {transform: translateY(-100%);}
+            // &:hover .char:after { transform: translateY(-100%); }
+        }
+
+        &_italic {
+            display: inline-block;
+            // font-style: italic;
+            @include philosopherBoldItalic;
+            color: #b4a88f;
+
+            .char {
+                transition: transform 0.6s cubic-bezier(0.6, 0, 0, 0.6) opacity 2s;
+                transition-delay: calc(0.5s);
+                opacity: 0;
+                transform: rotateX(180deg);
+                // transition-delay: calc( 0.3s * 0.1 );
+
+                &.anim-italic {
+                    opacity: 1;
+                    transform: rotateX(0deg);
+                    transition-duration: 1s;
+                    transition-delay: calc(0.5s);
+                    // transition-delay: calc( 0.3s * ( 1 - 0.1) );
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .loading {
+        height: 100svh;
+
+        &__container {
+            height: 100svh;
+        }
+    }
+}

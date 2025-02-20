@@ -1,0 +1,235 @@
+.main-title {
+  h2 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 5vw;
+    text-align: center;
+    line-height: 120%;
+    @include mulishLight;
+
+    @include xxl {
+      font-size: 62px;
+    }
+    @include md {
+      font-size: 46px;
+    }
+    @include sm {
+      font-size: 32px;
+    }
+  }
+
+  &-italic {
+    font-weight: 400;
+    @include philosopherBoldItalic;
+  }
+}
+
+.button-dark {
+  position: relative;
+  height: 3.2vw;
+  @include xxl {
+    height: 62px;
+  }
+
+  &__container {
+    width: auto;
+    &::after {
+      content: "";
+      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      width: 3.2vw;
+      height: 3.2vw;
+      background: #1c1c1c;
+      border-radius: 1.6vw;
+      z-index: -1;
+      @include xxl {
+        width: 62px;
+        height: 62px;
+        border-radius: 30px;
+      }
+    }
+  }
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 0.5vw;
+    transform: translateY(-50%);
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1.2);
+    border: 1px solid #fff;
+    width: 2.2vw;
+    height: 2.2vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    @include xxl {
+      left: 10px;
+      width: 43px;
+      height: 43px;
+    }
+    svg {
+      path {
+        stroke: #fff;
+      }
+    }
+  }
+
+  &__text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1.2);
+    margin-right: 1.5vw;
+    margin-left: 4.3vw;
+    color: #1c1c1c;
+    display: flex;
+    align-items: center;
+    font-size: 1.3vw;
+    font-style: normal;
+    line-height: 100%;
+    @include mulishMedium;
+    @include xxl {
+      margin-left: 82px;
+      margin-right: 20px;
+      font-size: 24px;
+    }
+    @include sm {
+      font-size: 20px;
+    }
+  }
+
+  &:hover {
+    .button-dark__container {
+      width: 100%;
+      &::after {
+        width: 100%;
+      }
+    }
+    .button-dark__arrow {
+      width: 1vw;
+      height: 1vw;
+      left: 1vw;
+      background-color: #fff;
+      @include xxl {
+        width: 20px;
+        height: 20px;
+        left: 20px;
+      }
+    }
+    .button-dark__text {
+      color: #e9e4d9;
+    }
+  }
+}
+
+.button-light {
+  position: relative;
+  height: 3.2vw;
+  @include xxl {
+    height: 62px;
+  }
+
+  &__container {
+    width: auto;
+    &::after {
+      content: "";
+      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      width: 3.2vw;
+      height: 3.2vw;
+      background: #e9e4d9;
+      border-radius: 1.6vw;
+      z-index: -1;
+      @include xxl {
+        width: 62px;
+        height: 62px;
+        border-radius: 30px;
+      }
+    }
+  }
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 0.5vw;
+    transform: translateY(-50%);
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1.2);
+    border: 1px solid #1c1c1c;
+    width: 2.2vw;
+    height: 2.2vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    @include xxl {
+      left: 10px;
+      width: 43px;
+      height: 43px;
+    }
+    svg {
+      path {
+        stroke: #1c1c1c;
+      }
+    }
+  }
+
+  &__text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1.2);
+    margin-right: 1.5vw;
+    margin-left: 4.3vw;
+    color: #e9e4d9;
+    display: flex;
+    align-items: center;
+    font-size: 1.3vw;
+    font-style: normal;
+    line-height: 100%;
+    @include mulishMedium;
+    @include xxl {
+      margin-left: 82px;
+      margin-right: 20px;
+      font-size: 24px;
+    }
+    @include sm {
+      font-size: 20px;
+    }
+  }
+
+  &:hover {
+    .button-light__container {
+      width: 100%;
+      &::after {
+        width: 100%;
+      }
+    }
+    .button-light__arrow {
+      width: 1vw;
+      height: 1vw;
+      left: 1vw;
+      background-color: #1c1c1c;
+      @include xxl {
+        width: 20px;
+        height: 20px;
+        left: 20px;
+      }
+    }
+    .button-light__text {
+      color: #1c1c1c;
+    }
+  }
+}
+
+.split-title .line {
+  will-change: transform;
+}
+
+.split-title .char {
+  will-change: transform;
+}
+
+.split-text .line {
+  will-change: transform;
+}

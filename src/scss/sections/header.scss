@@ -1,0 +1,562 @@
+.header {
+  position: fixed;
+  z-index: 100;
+  color: #000;
+  height: 80px;
+  width: 100%;
+  // background-color: #ECE0C6;
+
+  &.open {
+    height: var(--vh);
+    z-index: 102;
+    .header__logo_img {
+      mix-blend-mode: difference;
+    }
+    // transition-delay: 0.8s;
+  }
+
+  &.close {
+    // height: 80px;
+    transition-delay: 0.8s;
+    // z-index: 102;
+    .header__logo_img {
+      mix-blend-mode: normal;
+    }
+  }
+
+
+  &__content {
+    height: var(--vh);
+    &.close {
+      height: 80px;
+      transition-delay: 0.8s;
+    }
+
+    &.open {
+      height: var(--vh);
+    }
+  }
+
+  &__toggler {
+    height: 80px;
+    width: 100%;
+    padding: 0 5%;
+    // margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000;
+
+    &_mob {
+      display: none;
+    }
+
+    &_flex {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    &_btn {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      &_text {
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+
+        &_close {
+          display: none;
+        }
+      }
+
+      &_icn {
+        width: 16px;
+        height: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        div {
+          width: 16px;
+          height: 2px;
+          background-color: #fff;
+        }
+      }
+    }
+
+    &_right {
+      display: flex;
+      gap: 50px;
+    }
+
+    &_contacts {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+      // width: 80%;
+      justify-content: flex-start;
+      a {
+        display: flex;
+        align-items: center;
+      }
+      &_tel {
+        color: #fff;
+        font-size: 15px;
+      }
+    }
+  }
+
+  &__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    // margin: 0 auto;
+    padding: 0 10%;
+    background-color: #ece0c6;
+  }
+
+  &__body.open {
+    visibility: visible;
+    transition: visibility 0.8s ease 0s, clip-path 0.8s ease 0s;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+  }
+
+  &__body.close {
+    visibility: hidden;
+    clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+    transition: visibility 0.8s ease 0s, clip-path 0.8s ease 0s;
+  }
+
+  &__nav {
+    font-weight: 300;
+
+    &-item {
+      height: 9.5vh;
+      display: flex;
+      align-items: center;
+    }
+    &-link {
+      color: #000;
+      font-size: 6.5vh;
+      font-weight: 300;
+      text-transform: uppercase;
+      transition: font-size 0.5s ease-in-out;
+      @include philosopherRegular;
+
+      &:hover {
+        color: #000;
+        @include philosopherBoldItalic;
+        font-size: 8vh;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+
+  &__italic {
+    // font-style: italic;
+    @include philosopherBoldItalic;
+  }
+
+  &__right {
+    @include sm {
+      padding: 0 9% 15%;
+    }
+    &_header {
+      text-transform: uppercase;
+      font-size: 6vw;
+      font-weight: 300;
+      margin-bottom: 5.7vh;
+      color: #000;
+      @media (max-width: 1440px) and (max-height: 650px) {
+        font-size: 4vw;
+
+      }
+    }
+
+    &_contacts {
+      position: absolute;
+      bottom: 3vh;
+      right: 10%;
+      display: flex;
+      align-items: center;
+      gap: 35px;
+      justify-content: flex-end;
+      margin-top: 5vh;
+
+      &_tel {
+        color: #000;
+        &:hover {
+          color: rgb(68, 68, 68);
+        }
+      }
+    }
+  }
+
+  &__input {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+    width: 100%;
+    color: #000;
+    position: relative;
+    height: 70px;
+    padding: 0;
+    @include md {
+      color: #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    }
+    @include sm {
+      height: 56px;
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: #000 !important;
+      font-size: 0.8vw;
+      @include xxl {
+        font-size: 16px;
+      }
+      @include md {
+        -webkit-text-fill-color: #fff !important;
+      }
+    }
+
+    &-phone {
+      margin-bottom: 2vw;
+      @include xxl {
+        margin-bottom: 10px;
+      }
+      input {
+        padding-bottom: 1vw;
+        position: initial;
+        bottom: initial !important;
+        height: 100%;
+      }
+    }
+
+    .iti {
+      height: 100%;
+      // @include xxl {
+      //   padding: 20px 0;
+      // }
+      .iti__selected-dial-code {
+        @include md {
+          color: #fff;
+        }
+      }
+      input {
+        padding-left: 115px !important;
+        @include sm {
+          padding-left: 100px !important;
+        }
+        &:focus {
+          &::placeholder {
+            opacity: 0;
+          }
+        }
+        &::placeholder {
+          font-size: 0.8vw;
+          opacity: 1;
+          color: #000;
+          @include xxl {
+            font-size: 16px;
+          }
+          @include md {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      color: #000;
+      font-size: 0.8vw;
+      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-origin: left top;
+      transform: scale(1) translate(0, -50%);
+      svg {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        path {
+          @include md {
+            stroke: white;
+          }
+        }
+      }
+      @include xxl {
+        font-size: 16px;
+      }
+      @include md {
+        color: #fff;
+      }
+    }
+
+    input {
+      background-color: transparent;
+      border: none;
+      color: #000;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      padding: 0;
+      @include md {
+        color: #fff;
+      }
+      &::placeholder {
+        opacity: 0;
+      }
+      
+      &:-webkit-autofill ~ label,
+      &:focus + label,
+      &:focus ~ label,
+      &:not(:placeholder-shown) ~ label {
+        transition-duration: 0.2s;
+        transform: scale(0.7) translate(-1.5rem, -2rem);
+        opacity: 0.5;
+        svg {
+          opacity: 0;
+          transform: scale(0);
+        }
+        @include md {
+          transform: scale(0.7) translate(-1.6rem, -2rem);
+        }
+        @include sm {
+          transform: scale(0.7) translate(-2.1em, -2rem);
+        }
+      }
+
+      &:valid + label {
+        transition-duration: 0.2s;
+        transform: scale(0.7) translate(-1.5rem, -2rem);
+        opacity: 0.5;
+        svg {
+          opacity: 0;
+          transform: scale(0);
+        }
+        @include md {
+          transform: scale(0.7) translate(-1.6rem, -2rem);
+        }
+        @include sm {
+          transform: scale(0.7) translate(-2.1em, -2rem);
+        }
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    color: #1c1c1c;
+    font-size: 24px;
+
+    &_icn {
+      position: relative;
+      width: 62px;
+      height: 62px;
+      border-radius: 100%;
+      background-color: #1c1c1c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &_circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 43px;
+      height: 43px;
+      border-radius: 100%;
+      border: 1px solid #fff;
+    }
+
+    &_container {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 5vh;
+    }
+  }
+}
+
+@media screen and (max-height: 720px) {
+  .header {
+    &__right {
+      &_header {
+        margin-bottom: 2vh;
+      }
+
+      &_contacts {
+        bottom: 2vh;
+      }
+    }
+
+    &__input-phone {
+      margin-bottom: 0;
+    }
+
+    &__btn {
+      &_container {
+        margin-top: 2vh;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .header {
+    &__body {
+      padding: 0 5%;
+    }
+
+    &__nav {
+      &-link {
+        font-size: 5.5vh;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 43px;
+    &.open {
+      height: 100lvh;
+    }
+
+    &__content {
+      height: 100lvh;
+
+      &.open {
+        height: 100lvh;
+      }
+    }
+
+    &__logo {
+      // width: 30%;
+      // display: flex;
+      // justify-content: center;
+      margin-right: 10%;
+    }
+
+    &__toggler {
+      height: 43px;
+      flex-direction: row-reverse;
+      justify-content: center;
+      padding: 0;
+
+      &_flex {
+        flex-direction: row-reverse;
+        width: 95%;
+        justify-content: space-between;
+      }
+
+      &_mob {
+        display: block;
+      }
+      &_contacts {
+        display: none;
+      }
+
+      &_btn {
+        flex-direction: row-reverse;
+        gap: 10px;
+      }
+    }
+
+    &__body {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0;
+    }
+
+    &__nav {
+      &-item {
+        justify-content: center;
+        height: 4.5vh;
+      }
+
+      &-link {
+        font-size: 3.2vh;
+
+        &:hover {
+          color: #000;
+          @include philosopherBoldItalic;
+          font-size: 4.5vh;
+          transition: all 0.5s ease-in-out;
+        }
+      }
+    }
+
+    &__right {
+      background-color: #000;
+      border-radius: 15px 15px 0px 0px;
+      width: 100%;
+      height: 60%;
+      padding: 0 20% 15% 20%;
+      margin-top: 2vh;
+      &_header {
+        // text-align: center;
+        margin-bottom: 2vh;
+        margin-top: 2vh;
+        color: #fff;
+      }
+
+      &_contacts {
+        display: none;
+      }
+    }
+
+    &__btn {
+      &_container {
+        margin-top: 10px;
+        justify-content: center;
+      }
+    }
+
+    .button-dark {
+
+      &__container {
+        &::after {
+          background-color: #e9e4d9;
+        }
+      }
+
+      &__arrow {
+        border: 1px solid #1c1c1c;
+        svg {
+          path {
+            stroke: #1c1c1c;
+          }
+        }
+      }
+
+      &__text {
+        color: #e9e4d9;
+      }
+
+      &:hover {
+        .button-dark__bg {
+          &::after {
+            background-color: #1c1c1c;
+          }
+        }
+        .button-dark__arrow {
+          background-color: #1c1c1c;
+        }
+        .button-dark__text {
+          color: #1c1c1c;
+        }
+      }
+    }
+  }
+}

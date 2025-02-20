@@ -1,0 +1,434 @@
+.footer {
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  height: 100%;
+  @media (max-width: 1440px) and (max-height: 800px) {
+    height: 100vh;
+  }
+  @include lg {
+    position: relative;
+    bottom: initial;
+    height: 100%;
+  }
+  &__container {
+    width: 90%;
+    padding: 6.3vw 0 5.2vw;
+    will-change: transform;
+
+
+    @include lg {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    @include sm {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    @include sm {
+      flex-direction: column;
+    }
+  }
+
+  &__even {
+    flex-basis: 50%;
+    max-width: 50%;
+    @include xl {
+      flex-basis: 40%;
+      max-width: 40%;
+    }
+    @include sm {
+      flex-basis: 100%;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-width: 26vw;
+      @include xl {
+        max-width: 200px;
+      }
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    gap: 3.4vw;
+    padding-top: 4.2vw;
+    @include xl {
+      flex-direction: column;
+    }
+    @include lg {
+      gap: 65px;
+      padding-top: 80px;
+    }
+    @include sm {
+      padding-top: 30px;
+      gap: 45px;
+    }
+  }
+
+  &__phone {
+    cursor: pointer;
+    position: relative;
+    @include md {
+      justify-content: center;
+    }
+    &_number {
+      color: #fff;
+      font-size: 1vw;
+      line-height: 150%;
+      @include mulishMedium;
+      @include lg {
+        font-size: 20px;
+      }
+      @include sm {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    &_text {
+      position: absolute;
+      top: 2.1vw;
+      left: 0;
+      color: #6f6f6f;
+      font-size: 1vw;
+      font-weight: 400;
+      line-height: 150%;
+      @include philosopherRegular;
+      @include lg {
+        top: 40px;
+        font-size: 20px;
+      }
+      @include sm {
+        top: 25px;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6vw;
+    @include lg {
+      gap: 30px;
+    }
+    @include sm {
+      flex-direction: initial;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    a {
+      color: #fff;
+      font-size: 0.8vw;
+      line-height: 100%;
+      letter-spacing: 2px;
+      display: flex;
+      gap: 0.8vw;
+      transition: 0.6s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+      &:hover {
+        scale: 1.05;
+      }
+      @include lg {
+        font-size: 16px;
+        gap: 15px;
+      }
+      @include sm {
+        gap: 5px;
+      }
+    }
+  }
+
+  &__menu {
+    padding-top: 3.1vw;
+
+    @include lg {
+      padding-top: 60px;
+    }
+    @include sm {
+      padding-top: 30px;
+      margin-top: 30px;
+      margin-bottom: 60px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 1.6vw;
+    @include lg {
+      gap: 30px;
+    }
+
+    @include lg {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px 30px;
+    }
+  }
+
+  &__item {
+    a {
+      color: #737373;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 2px;
+      transition: 0.6s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+      &:hover {
+        scale: 1.05;
+        color: #fff;
+      }
+      @include lg {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__odd {
+    flex-basis: 50%;
+    max-width: 50%;
+    position: relative;
+    @include md {
+      flex-basis: 60%;
+      max-width: 60%;
+    }
+    @include sm {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    width: 18.5vw;
+    height: 22.9vw;
+    opacity: 0.2;
+    @include lg {
+      width: 150px;
+      height: 190px;
+      opacity: 0.1;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    &-left {
+      top: 50%;
+      left: 50%;
+      transform: translate(20%, -45%) rotate(20deg) scale(0.8);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 46% 100%);
+      z-index: 1;
+    }
+    &-center {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+    &-right {
+      top: 50%;
+      left: 50%;
+      transform: translate(-120%, -45%) rotate(-20deg) scale(0.8);
+      clip-path: polygon(0% 0%, 100% 0%, 54% 100%, 0% 100%);
+      z-index: 1;
+    }
+  }
+
+  &__form {
+    position: relative;
+    z-index: 3;
+    @include sm {
+      margin-top: 60px;
+    }
+    &-title {
+      padding-bottom: 3.1vw;
+      @include lg {
+        padding-bottom: 60px;
+      }
+      @include md {
+        padding-bottom: 50px;
+      }
+      @include sm {
+        padding-bottom: 10px;
+      }
+      h3 {
+        color: #fff;
+        font-size: 3.3vw;
+        line-height: 100%;
+        text-transform: uppercase;
+        @include mulishLight;
+        @include lg {
+          font-size: 46px;
+        }
+        @include sm {
+          font-size: 32px;
+        }
+        span {
+          @include philosopherItalic;
+        }
+      }
+    }
+
+
+  }
+  &__input {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    width: 100%;
+    color: #fff;
+    position: relative;
+    height: 70px;
+    padding: 0;
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: #fff !important;
+      font-size: 0.8vw;
+      @include xxl {
+        font-size: 16px;
+      }
+    }
+
+    &-phone {
+      margin-bottom: 2vw;
+      @include xxl {
+        margin-bottom: 40px;
+      }
+      input {
+        padding-bottom: 1vw;
+        position: initial;
+        bottom: initial !important;
+        height: 100%;
+      }
+    }
+
+    .iti {
+      height: 100%;
+      @include xxl {
+        padding: 20px 0;
+      }
+      .iti__selected-dial-code {
+        color: #fff;
+      }
+      input {
+        padding-left: 115px !important;
+        @include sm {
+          padding-left: 100px !important;
+        }
+        &:focus {
+          &::placeholder {
+            opacity: 0;
+          }
+        }
+        &::placeholder {
+          font-size: 0.8vw;
+          opacity: 1;
+          color: #fff;
+          @include xxl {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      color: #fff;
+      font-size: 0.8vw;
+      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-origin: left top;
+      transform: scale(1) translate(0, -50%);
+      svg {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      @include xxl {
+        font-size: 16px;
+      }
+    }
+
+    input {
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      padding: 0;
+      &::placeholder {
+        opacity: 0;
+      }
+      
+      &:-webkit-autofill ~ label,
+      &:focus + label,
+      &:focus ~ label,
+      &:not(:placeholder-shown) ~ label {
+        transition-duration: 0.2s;
+        transform: scale(0.7) translate(-1.5rem, -2rem);
+        opacity: 0.5;
+        svg {
+          opacity: 0;
+          transform: scale(0);
+        }
+        @include md {
+          transform: scale(0.7) translate(-1.6rem, -2rem);
+        }
+        @include sm {
+          transform: scale(0.7) translate(-2.1em, -2rem);
+        }
+      }
+
+      &:valid + label {
+        transition-duration: 0.2s;
+        transform: scale(0.7) translate(-1.5rem, -2rem);
+        opacity: 0.5;
+        svg {
+          opacity: 0;
+          transform: scale(0);
+        }
+        @include md {
+          transform: scale(0.7) translate(-1.6rem, -2rem);
+        }
+        @include sm {
+          transform: scale(0.7) translate(-2.1em, -2rem);
+      }
+      }
+    }
+  }
+
+  &__form-button {
+    display: flex;
+    justify-content: flex-end;
+    @include sm {
+      justify-content: center;
+    }
+  }
+}
