@@ -17,11 +17,11 @@ GSAP for animations
 📥 How to Download the Repository
 Clone the repository to your local machine:
 
-git clone https://github.com/ArinaTer/ukoluz.git
+git clone https://github.com/ArinaTer/cavalli-couture.git
 
 Navigate to the project directory:
 
-cd business-bay-tower-360
+cd cavalli-couture
 
 📦 Install Dependencies Ensure you have Node.js installed, then run:
 
