@@ -1,38 +1,45 @@
 Cavalli Couture
 
-Cavalli Couture is a landing page designed to showcase templates. Built using HTML, CSS, and JavaScript, this project integrates GSAP animations for a dynamic user experience. It is developed with future integration into the Drupal CMS in mind, providing a clean, responsive layout ready for content management system customization.
+Cavalli Couture — это посадочная страница для демонстрации шаблонов. Созданная с использованием HTML, CSS и JavaScript, эта страница включает анимации GSAP для динамичного пользовательского опыта. Проект разработан с учетом будущей интеграции в CMS Drupal, предлагая чистый и адаптивный дизайн, готовый к кастомизации под систему управления контентом.
 
-Features
-Clean and responsive design
+Особенности:
 
-GSAP animations for smooth transitions
+Чистый и адаптивный дизайн
 
-Future integration with Drupal CMS
+Анимации GSAP для плавных переходов
 
-Technologies Used
+Будущая интеграция с Drupal CMS
+
+Используемые технологии:
+
 HTML, CSS, JavaScript
 
-GSAP for animations
+GSAP для анимаций
 
-📥 How to Download the Repository
-Clone the repository to your local machine:
+
+📥 Как скачать репозиторий
+
+Клонируйте репозиторий с ветки dev:
 
 git clone https://github.com/ArinaTer/cavalli-couture.git
 
-Navigate to the project directory:
 
-cd cavalli-couture
+📦 Установка зависимостей
 
-📦 Install Dependencies Ensure you have Node.js installed, then run:
+Убедитесь, что у вас установлен Node.js, затем выполните:
 
 npm install
 
-🚀 Running the Project Locally Start the development server:
+🚀 Запуск проекта локально
+
+Запустите сервер разработки:
 
 npm run dev
 
-Open your browser and visit: http://localhost:3000
+Откройте браузер и посетите: http://localhost:3000
 
-🏗️ Creating a Production Build To generate a production-ready build:
+🏗️ Создание production-версии
+
+Для генерации сборки для продакшн:
 
 npm run build
